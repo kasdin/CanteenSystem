@@ -1,4 +1,4 @@
-package sample;
+package presentation;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,9 +10,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../presentation/sample.fxml"));
         primaryStage.setTitle("Canteen System");
-        primaryStage.setScene(new Scene(root, 1000, 1000));
+        primaryStage.setScene(new Scene(root, 1200, 1000));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
