@@ -29,7 +29,14 @@ public class Controller {
     @FXML Button btnCheckoutSuccessFinish;
 
     @FXML public void login() {
-        if (usernameField.getText().equals("Kasper") && passwordField.getText().equals("Admin")) {
+        DB.selectSQL("SELECT (fldUsername) From tblCanteenEmployees WHERE fldUsername ='" + usernameField.getText() + "'");
+        String username = DB.getData();
+
+        DB.selectSQL("SELECT (fldPassword) From tblCanteenEmployees WHERE fldUsername ='" + usernameField.getText() + "'");
+        String password = DB.getData();
+
+
+        if (usernameField.getText().equals(username) && passwordField.getText().equals(password)) {
             loginPane.setVisible(false);
             menuPane.setVisible(true);
         } else {
